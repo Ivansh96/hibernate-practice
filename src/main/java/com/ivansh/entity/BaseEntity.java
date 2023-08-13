@@ -1,0 +1,18 @@
+package com.ivansh.entity;
+
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
+import java.util.UUID;
+
+public interface BaseEntity<T extends Serializable> {
+
+    void setId(T id);
+    T getId();
+
+
+}

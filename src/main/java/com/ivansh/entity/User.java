@@ -10,10 +10,10 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(exclude = {"company", "profile"})
-@Builder
 @Entity
 @Table(name = "users")
-public class User {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class User {
 
     @Id
     @GeneratedValue(generator = "UUID")

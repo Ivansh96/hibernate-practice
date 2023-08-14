@@ -20,17 +20,6 @@ public class HibernateRunner {
                 .name("Yandex")
                 .build();
 
-        User user = User.builder()
-                .username("mrmr13@gmail.com")
-                .personalInfo(PersonalInfo.builder()
-                        .firstname("Maria")
-                        .lastname("Makarova")
-                        .birthdate(LocalDate.of(1998, 3, 1))
-                        .build())
-                .company(company)
-                .build();
-        log.info("Entity is in transient state. Object: {}", user);
-
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
             Session session1 = sessionFactory.openSession();
             try (session1) {
@@ -38,7 +27,6 @@ public class HibernateRunner {
                 session1.beginTransaction();
 
                 session1.persist(company);
-                session1.persist(user);
 
                 session1.getTransaction().commit();
 

@@ -21,6 +21,7 @@ public class Company {
     @GeneratedValue(generator = "UUID")
     private UUID id;
 
+    @Column(nullable = false, unique = true)
     private String name;
 
     @OneToMany(mappedBy = "company")

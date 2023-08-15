@@ -21,6 +21,28 @@ import static org.junit.jupiter.api.Assertions.*;
 class HibernateRunnerTest {
 
     @Test
+    void testHql() {
+
+        try (var sessionFactory = HibernateUtilTest.buildSessionFactory();
+             Session session = sessionFactory.openSession();) {
+            session.beginTransaction();
+
+            String name = "Ivan";
+            String companyName = "Google";
+
+            var result = session.createQuery("select u from User u " +
+                            "join u.company c " +
+                            "where u.personalInfo.firstname = :firstname and c.name = :companyName", User.class)
+                    .setParameter("firstname", name)
+                    .setParameter("companyName", companyName)
+                    .list();
+
+            session.getTransaction().commit();
+        }
+
+    }
+
+    @Test
     void testInheritance() {
         try (var sessionFactory = HibernateUtilTest.buildSessionFactory();
              Session session = sessionFactory.openSession();) {

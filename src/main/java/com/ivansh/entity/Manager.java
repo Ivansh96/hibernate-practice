@@ -16,10 +16,10 @@ public class Manager extends User{
 
     private String projectName;
 
-    @Builder
-    public Manager(UUID id, String username, PersonalInfo personalInfo,
-                   Company company, Profile profile, String projectName) {
-        super(id, username, personalInfo, company, profile);
-        this.projectName = projectName;
-    }
+//    @Builder
+//    public Manager(UUID id, String username, PersonalInfo personalInfo,
+//                   Company company, Profile profile, String projectName) {
+//        super(id, username, personalInfo, company, profile);
+//        this.projectName = projectName;
+//    }
 }

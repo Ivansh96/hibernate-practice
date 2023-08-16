@@ -15,6 +15,7 @@
     <mapping class="com.ivansh.entity.Profile"/>
     <mapping class="com.ivansh.entity.Programmer"/>
     <mapping class="com.ivansh.entity.Manager"/>
+    <mapping class="com.ivansh.entity.Payment"/>
 
 
     <!-- DB schema will be updated if needed -->

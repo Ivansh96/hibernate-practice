@@ -10,9 +10,9 @@ import org.hibernate.Session;
 import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class UserDao {
+public class UserDaoHql {
 
-    private static final UserDao INSTANCE = new UserDao();
+    private static final UserDaoHql INSTANCE = new UserDaoHql();
 
     public List<User> findAllUsers(Session session) {
         return session.createQuery("select u from User u", User.class)
@@ -69,7 +69,7 @@ public class UserDao {
                 .list();
     }
 
-    public List<Object[]> findBestAvgPayment(Session session) {
+    public List<Object[]> findBiggestAvgPayment(Session session) {
         return session.createQuery("select u, avg (p.amount) from User u " +
                         "join u.payments p " +
                         "group by u.personalInfo.firstname " +
@@ -78,7 +78,7 @@ public class UserDao {
                 .list();
     }
 
-    public static UserDao getInstance() {
+    public static UserDaoHql getInstance() {
         return INSTANCE;
     }
 }

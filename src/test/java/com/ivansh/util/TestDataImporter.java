@@ -24,7 +24,7 @@ public class TestDataImporter {
        User billGates = saveUser(session, PersonalInfo.builder()
                .firstname("Bill")
                .lastname("Gates")
-               .birthdate(LocalDate.of(1955, 10, 28))
+               .birthdate(LocalDate.of(1955, 11, 28))
                .build(), microsoft);
         User steveJobs = saveUser(session, PersonalInfo.builder()
                 .firstname("Steve")
@@ -34,7 +34,7 @@ public class TestDataImporter {
         User timCook = saveUser(session, PersonalInfo.builder()
                 .firstname("Tim")
                 .lastname("Cook")
-                .birthdate(LocalDate.of(1955, 12, 24))
+                .birthdate(LocalDate.of(1955, 11, 30))
                 .build(), apple);
         User jeffBezos = saveUser(session, PersonalInfo.builder()
                 .firstname("Jeff")
@@ -42,21 +42,20 @@ public class TestDataImporter {
                 .birthdate(LocalDate.of(1952, 4, 22))
                 .build(), amazon);
 
-        savePayment(session, billGates, 200);
+        savePayment(session, billGates, 100);
+        savePayment(session, billGates, 300);
         savePayment(session, billGates, 500);
-        savePayment(session, billGates, 600);
 
         savePayment(session, steveJobs, 250);
-        savePayment(session, steveJobs, 550);
-        savePayment(session, steveJobs, 650);
+        savePayment(session, steveJobs, 600);
+        savePayment(session, steveJobs, 500);
 
         savePayment(session, timCook, 300);
         savePayment(session, timCook, 400);
-        savePayment(session, timCook, 700);
 
-        savePayment(session, jeffBezos, 350);
-        savePayment(session, jeffBezos, 450);
-        savePayment(session, jeffBezos, 750);
+        savePayment(session, jeffBezos, 500);
+        savePayment(session, jeffBezos, 500);
+        savePayment(session, jeffBezos, 500);
 
     }
 

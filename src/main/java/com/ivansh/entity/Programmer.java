@@ -19,10 +19,10 @@ public class Programmer extends User {
     @Enumerated(EnumType.STRING)
     private Language language;
 
-    @Builder
-    public Programmer(UUID id, String username, PersonalInfo personalInfo,
-                      Company company, Profile profile, Language language) {
-        super(id, username, personalInfo, company, profile);
-        this.language = language;
-    }
+//    @Builder
+//    public Programmer(UUID id, String username, PersonalInfo personalInfo,
+//                      Company company, Profile profile, Language language) {
+//        super(id, username, personalInfo, company, profile);
+//        this.language = language;
+//    }
 }

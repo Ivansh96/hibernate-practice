@@ -13,8 +13,6 @@
     <mapping class="com.ivansh.entity.User"/>
     <mapping class="com.ivansh.entity.Company"/>
     <mapping class="com.ivansh.entity.Profile"/>
-    <mapping class="com.ivansh.entity.Programmer"/>
-    <mapping class="com.ivansh.entity.Manager"/>
     <mapping class="com.ivansh.entity.Payment"/>
 
 

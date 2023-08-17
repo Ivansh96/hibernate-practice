@@ -16,22 +16,5 @@ import java.time.LocalDate;
 public class HibernateRunner {
     public static void main(String[] args) {
 
-        Company company = Company.builder()
-                .name("Yandex")
-                .build();
-
-        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
-            Session session1 = sessionFactory.openSession();
-            try (session1) {
-
-                session1.beginTransaction();
-
-                session1.persist(company);
-
-                session1.getTransaction().commit();
-
-
-            }
-        }
     }
 }

@@ -1,9 +1,10 @@
 package com.ivansh.entity;
 
-import jakarta.persistence.*;
+
 
 import lombok.*;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -19,8 +20,6 @@ import static com.ivansh.util.StringUtil.SPACE;
 @Entity
 @Builder
 @Table(name = "users")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type")
 public class User implements BaseEntity<UUID> {
 
     @Id

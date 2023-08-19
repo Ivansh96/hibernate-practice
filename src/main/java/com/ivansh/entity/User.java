@@ -51,8 +51,4 @@ public class User implements BaseEntity<UUID> {
     @OneToMany(mappedBy = "user")
     private List<UserChat> usersChat = new ArrayList<>();
 
-    public String fullName() {
-        return getPersonalInfo().getFirstname() + SPACE + getPersonalInfo().getLastname();
-    }
-
 }

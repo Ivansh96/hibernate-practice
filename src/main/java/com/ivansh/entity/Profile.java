@@ -14,7 +14,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Profile {
+public class Profile implements BaseEntity<UUID> {
 
     @Id
     @GeneratedValue(generator = "UUID")

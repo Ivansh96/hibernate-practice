@@ -3,16 +3,14 @@ package com.ivansh.dao;
 import com.ivansh.dto.PaymentFilter;
 import com.ivansh.entity.*;
 import com.querydsl.core.Tuple;
-import com.querydsl.core.types.Predicate;
 import com.querydsl.jpa.impl.JPAQuery;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.hibernate.Session;
 
-import java.util.ArrayList;
 import java.util.List;
 
-;import static com.ivansh.entity.QCompany.company;
+import static com.ivansh.entity.QCompany.company;
 import static com.ivansh.entity.QPayment.payment;
 import static com.ivansh.entity.QUser.user;
 

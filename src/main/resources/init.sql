@@ -30,7 +30,20 @@ CREATE TABLE company_locale
     PRIMARY KEY (company_id, lang)
 );
 
+CREATE TABLE  users_chat
+(
+  id UUID PRIMARY KEY,
+  chat_id UUID REFERENCES chat(id),
+  user_id UUID REFERENCES users(id)
+);
 
+CREATE TABLE chat
+(
+  id UUID PRIMARY KEY,
+  name VARCHAR(64) NOT NULL
+);
+
+DROP TABLE chat;
 
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";

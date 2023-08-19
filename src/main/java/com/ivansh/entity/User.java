@@ -2,12 +2,14 @@ package com.ivansh.entity;
 
 
 
+
 import lombok.*;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.envers.NotAudited;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 import static com.ivansh.util.StringUtil.SPACE;
 
@@ -20,6 +22,7 @@ import static com.ivansh.util.StringUtil.SPACE;
 @Entity
 @Builder
 @Table(name = "users")
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class User implements BaseEntity<UUID> {
 
     @Id
@@ -42,6 +45,11 @@ public class User implements BaseEntity<UUID> {
     @Builder.Default
     @OneToMany(mappedBy = "receiver")
     private List<Payment> payments = new ArrayList<>();
+
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @Builder.Default
+    @OneToMany(mappedBy = "user")
+    private List<UserChat> usersChat = new ArrayList<>();
 
     public String fullName() {
         return getPersonalInfo().getFirstname() + SPACE + getPersonalInfo().getLastname();

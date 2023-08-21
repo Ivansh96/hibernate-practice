@@ -9,6 +9,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.envers.NotAudited;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import java.util.*;
 
 import static com.ivansh.util.StringUtil.SPACE;
@@ -32,6 +33,7 @@ public class User implements BaseEntity<UUID> {
     @Column(unique = true)
     private String username;
 
+    @Valid
     @Embedded
     private PersonalInfo personalInfo;
 

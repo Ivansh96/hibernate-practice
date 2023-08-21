@@ -1,8 +1,8 @@
 package com.ivansh.dao;
 
-import com.ivansh.dto.CompanyDto;
 import com.ivansh.entity.Payment;
 import com.ivansh.entity.User;
+import com.querydsl.core.Tuple;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.hibernate.Session;
@@ -61,12 +61,12 @@ public class UserDaoHql {
                 .uniqueResult();
     }
 
-    public List<CompanyDto> findCompanyNamesWithAvgUserPaymentOrderByCompanyName(Session session) {
+    public List<Tuple> findCompanyNamesWithAvgUserPaymentOrderByCompanyName(Session session) {
         return session.createQuery("select c.name, avg (p.amount) from Company c " +
                         "join c.users u " +
                         "join u.payments p " +
                         "group by c.name " +
-                        "order by c.name ", CompanyDto.class)
+                        "order by c.name ", Tuple.class)
                 .list();
     }
 

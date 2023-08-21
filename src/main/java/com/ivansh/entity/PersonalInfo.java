@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Data
@@ -21,6 +22,7 @@ public class PersonalInfo {
 
     private String lastname;
 
+    @NotNull
     @Column(name = "birth_date")
     private LocalDate birthdate;
 }
